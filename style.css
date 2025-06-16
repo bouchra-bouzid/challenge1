@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #fffaf7;
+  color: #3b2b23;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "intro"
+    "image"
+    "prep-nutrition"
+    "ingredients"
+    "instructions";
+  gap: 24px;
+}
+
+/* Header */
+.header-section {
+  grid-area: header;
+  text-align: center;
+}
+
+.header-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  color: #b30000;
+  margin-bottom: 0.5rem;
+}
+
+/* Introduction */
+.introduction-section {
+  grid-area: intro;
+  background: linear-gradient(to right, #fff1ec, #ffe9e0);
+  padding: 1.5rem 2rem;
+  border-left: 6px solid #c1440e;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  font-size: 1.15rem;
+  color: #4a322d;
+}
+
+/* Image */
+.image-section {
+  grid-area: image;
+}
+
+.image-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.03);
+}
+
+.image-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #c1440e;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* PREP + NUTRITION */
+.prep-nutrition-wrapper {
+  grid-area: prep-nutrition;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.prep-nutrition-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  width: 1px;
+  background-color: #eee2d8;
+}
+
+.preparation,
+.nutrition {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.preparation h3,
+.nutrition h3 {
+  color: #b30000;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.prep-grid,
+.nutrition-grid {
+  display: flex;
+  gap: 28px;
+}
+
+.prep-item,
+.nutrition-item {
+  text-align: center;
+}
+
+.prep-emoji,
+.nutrition-emoji {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.prep-label,
+.nutrition-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #5e3c2d;
+}
+
+.prep-value,
+.nutrition-value {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Ingrédients */
+.ingredients-section {
+  grid-area: ingredients;
+  background-color: #fff;
+  border: 1px solid #f0e0d6;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.ingredients-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  text-align: center;
+  color: #b30000;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ingredients-columns {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.ingredients-columns > div {
+  flex: 1;
+}
+
+.ingredients-columns h3 {
+  color: #963300;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e0c6b5;
+  padding-bottom: 6px;
+}
+
+.ingredients-columns ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ingredients-columns li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  font-size: 0.95rem;
+  color: #3b2b23;
+  position: relative;
+}
+
+.ingredients-columns li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #b30000;
+}
+
+/* Instructions */
+.instructions-section {
+  grid-area: instructions;
+  background-color: #fff;
+  border: 1px solid #f0e0d6;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #b30000;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.instructions-section ol {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 0;
+}
+
+.instructions-section li {
+  position: relative;
+  background-color: #fffaf9;
+  border: 1px solid #e8d6cd;
+  border-radius: 12px;
+  padding: 18px 20px 18px 52px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.03);
+  line-height: 1.6;
+}
+
+.instructions-section li::before {
+  content: counter(step);
+  counter-increment: step;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 26px;
+  height: 26px;
+  background-color: #b30000;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
